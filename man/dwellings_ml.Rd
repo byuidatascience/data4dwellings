@@ -7,6 +7,7 @@
 \format{
 A data frame with columns:
 \describe{
+\item{parcel}{The variable is character. The parcel id}
 \item{abstrprd}{The variable is numeric. No clue}
 \item{livearea}{The variable is numeric. Square footage that is liveable}
 \item{finbsmnt}{The variable is numeric. Square footage finished in the basement}
@@ -27,7 +28,6 @@ A data frame with columns:
 \item{condition_Excel}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}
 \item{condition_Fair}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}
 \item{condition_Good}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}
-\item{condition_None}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}
 \item{condition_VGood}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}
 \item{quality_A}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}
 \item{quality_B}{The variable is numeric. 0 or 1 to mark building having attriubte as 1}

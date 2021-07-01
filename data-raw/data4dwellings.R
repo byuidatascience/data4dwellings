@@ -19,20 +19,23 @@ usethis::proj_set(package_path)
 # usethis::proj_set(package_path)
 ##### dpr_delete_github(user, package_name_text) ########### End create section
 
-dwellings_denver <- read_csv("projects/housing/data/homes_denver.csv") 
+dwellings_denver <- read_csv("projects/housing/data/homes_denver.csv") %>%
+  rename(parcel = PARCEL )
 
-dwellings_ml <- read_csv("projects/housing/data/homes_denver_ml.csv")
+dwellings_ml <- read_csv("projects/housing/data/homes_denver_ml.csv") %>%
+  rename(parcel = PARCEL )
 
-dwellings_neighborhoods_ml <- read_csv("projects/housing/data/homes_denver_ml_neighborhood.csv")
+dwellings_neighborhoods_ml <- read_csv("projects/housing/data/homes_denver_ml_neighborhood.csv") %>%
+  rename(parcel = PARCEL )
 
-usethis::use_data(dwellings_denver, dwellings_ml, dwellings_neighborhoods_ml)
+usethis::use_data(dwellings_denver, dwellings_ml, dwellings_neighborhoods_ml, overwrite = TRUE)
 
 
 dpr_export(dwellings_denver, export_folder = path(package_path, "data-raw"), 
-           export_format = c(".csv", ".xlsx"))
+           export_format = c(".csv", ".xlsx", ".dta", ".json"))
 
 dpr_export(dwellings_ml, export_folder = path(package_path, "data-raw"), 
-           export_format = c(".csv", ".xlsx", ".dta", ".json"))
+           export_format = c(".csv", ".xlsx", ".json"))
 
 dpr_export(dwellings_neighborhoods_ml, export_folder = path(package_path, "data-raw"), 
            export_format = c(".csv", ".xlsx", ".dta", ".json"))
@@ -42,8 +45,8 @@ dpr_document(dwellings_denver, extension = ".md.R", export_folder = usethis::pro
              description = "Attributes of each dwelling with their selling price for homes that sold in Denver in 2013",
              source = "https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-real-property-sales-book-2013",
              var_details = list(
-                      'nbhd' = "Neigborhood of the home",
                       'parcel' = "The parcel id",
+                      'nbhd' = "Neigborhood of the home",
                       'abstrprd' = 'No clue',
                       'livearea' = 'Square footage that is liveable',
                       'finbsmnt' = 'Square footage finished in the basement',
@@ -74,6 +77,7 @@ dpr_document(dwellings_ml, extension = ".md.R", export_folder = usethis::proj_ge
              description = "Attributes of each dwelling with their selling price in machine learning format",
              source = "https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-real-property-sales-book-2013",
              var_details = list(
+               'parcel' = "The parcel id",
                'abstrprd' = 'No clue',
                'livearea' = 'Square footage that is liveable',
                'finbsmnt' = 'Square footage finished in the basement',
@@ -126,12 +130,12 @@ dpr_document(dwellings_ml, extension = ".md.R", export_folder = usethis::proj_ge
                'status_V' = '0 or 1 to mark building having attriubte as 1',
                'before1980' = '0 or 1 to mark building having attriubte as 1'))
 
-
 dpr_document(dwellings_neighborhoods_ml, extension = ".md.R", export_folder = usethis::proj_get(),
              object_name = "dwellings_neighborhoods_ml", title = "One hot encoded neighbordood variable",
              description = "Neighborhood attributes for homes that sold in Denver in 2013",
              source = "https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-real-property-sales-book-2013",
              var_details = list(
+               'parcel' = "The parcel id",
                'nbhd_1' = "In neighborhood 1"))
 
 
@@ -141,8 +145,8 @@ dpr_write_script(folder_dir = package_path, r_read = "scripts_general/dwellings_
                  r_folder_write = "data-raw", r_write = str_c(package_name_text, ".R"))
 
 dpr_write_script(folder_dir = package_path, r_read = "projects/housing/scripts/data_format.py", r_folder_write = "data-raw",
-                 r_write = "names.py")
+                 r_write = "data_format.py")
 
 devtools::document(package_path)
 
-dpr_push(folder_dir = package_path, message = "'Second data set'", repo_url = NULL)
+dpr_push(folder_dir = package_path, message = "'First data set'", repo_url = NULL)

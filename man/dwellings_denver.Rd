@@ -7,8 +7,8 @@
 \format{
 A data frame with columns:
 \describe{
-\item{nbhd}{The variable is numeric. Neigborhood of the home}
 \item{parcel}{The variable is character. The parcel id}
+\item{nbhd}{The variable is numeric. Neigborhood of the home}
 \item{abstrprd}{The variable is numeric. No clue}
 \item{livearea}{The variable is numeric. Square footage that is liveable}
 \item{finbsmnt}{The variable is numeric. Square footage finished in the basement}

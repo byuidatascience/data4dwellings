@@ -7,14 +7,13 @@
 \format{
 A data frame with columns:
 \describe{
+\item{parcel}{The variable is character. The parcel id}
 \item{nbhd_1}{The variable is numeric. In neighborhood 1}
 \item{nbhd_2}{The variable is numeric. }
 \item{nbhd_3}{The variable is numeric. }
 \item{nbhd_4}{The variable is numeric. }
 \item{nbhd_5}{The variable is numeric. }
 \item{nbhd_101}{The variable is numeric. }
-\item{nbhd_102}{The variable is numeric. }
-\item{nbhd_103}{The variable is numeric. }
 \item{nbhd_104}{The variable is numeric. }
 \item{nbhd_105}{The variable is numeric. }
 \item{nbhd_106}{The variable is numeric. }
@@ -35,8 +34,6 @@ A data frame with columns:
 \item{nbhd_122}{The variable is numeric. }
 \item{nbhd_123}{The variable is numeric. }
 \item{nbhd_124}{The variable is numeric. }
-\item{nbhd_125}{The variable is numeric. }
-\item{nbhd_126}{The variable is numeric. }
 \item{nbhd_127}{The variable is numeric. }
 \item{nbhd_128}{The variable is numeric. }
 \item{nbhd_129}{The variable is numeric. }
@@ -47,7 +44,6 @@ A data frame with columns:
 \item{nbhd_201}{The variable is numeric. }
 \item{nbhd_202}{The variable is numeric. }
 \item{nbhd_203}{The variable is numeric. }
-\item{nbhd_204}{The variable is numeric. }
 \item{nbhd_205}{The variable is numeric. }
 \item{nbhd_206}{The variable is numeric. }
 \item{nbhd_207}{The variable is numeric. }
@@ -65,7 +61,6 @@ A data frame with columns:
 \item{nbhd_220}{The variable is numeric. }
 \item{nbhd_221}{The variable is numeric. }
 \item{nbhd_222}{The variable is numeric. }
-\item{nbhd_223}{The variable is numeric. }
 \item{nbhd_224}{The variable is numeric. }
 \item{nbhd_225}{The variable is numeric. }
 \item{nbhd_226}{The variable is numeric. }
@@ -144,7 +139,6 @@ A data frame with columns:
 \item{nbhd_539}{The variable is numeric. }
 \item{nbhd_540}{The variable is numeric. }
 \item{nbhd_541}{The variable is numeric. }
-\item{nbhd_542}{The variable is numeric. }
 \item{nbhd_543}{The variable is numeric. }
 \item{nbhd_544}{The variable is numeric. }
 \item{nbhd_545}{The variable is numeric. }
@@ -197,7 +191,6 @@ A data frame with columns:
 \item{nbhd_623}{The variable is numeric. }
 \item{nbhd_624}{The variable is numeric. }
 \item{nbhd_625}{The variable is numeric. }
-\item{nbhd_626}{The variable is numeric. }
 \item{nbhd_627}{The variable is numeric. }
 \item{nbhd_628}{The variable is numeric. }
 \item{nbhd_629}{The variable is numeric. }
